@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Carlisle Blinds & Installation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="functions.css">
+  <script defer src="js/main.js"></script>
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
+  <div class="logo" style="display: flex; align-items: center;">
+      <img src="logo.png" alt="Carlisle Blinds & Installation Logo" style="width: 100px; height: 100px; margin-right: 10px;" />
+      Carlisle Blinds & Installation
+  </div>
+
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="container">
+      <div style="text-align: center;">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Fill out the form below and our team will contact you within 24 hours.</p>
+      </div>
+
+      <form action="https://formspree.io/f/xdkpqerv" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name*</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message*</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Carlisle Blinds & Installation | Serving all of Utah</p>
+    </div>
+  </footer>
+</body>
+</html>
