@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <input type="hidden" name="_next" value="thanks.html">
     <title>Carlisle Blinds & Installation – Premium Window Coverings in Utah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Utah’s trusted source for custom blinds, shades, shutters, and expert installation. Free quotes, motorized options, and outdoor solutions. Schedule your appointment today.">
     
     <!-- Google Fonts -->
@@ -12,6 +13,7 @@
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="functions.css">
     <script>
         tailwind.config = {
             theme: {
@@ -98,7 +100,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-serif text-primary mb-4">Why Choose Carlisle?</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">With over 15 years serving Utah homes, we deliver unmatched quality, precision installation, and personalized service.</p>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">With over 15 years of experience, we’ve built our reputation on quality, precision, and personal care. Every product is proudly made in the USA for faster delivery and superior performance. And if you’re looking for something unique, we’ll match or custom-source it to fit your exact style.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-10">
                 <div class="text-center">
@@ -147,6 +149,13 @@
                     </div>
                     <h3 class="font-semibold text-lg">Exterior Screens</h3>
                     <p class="text-sm text-gray-600">Protect patios and decks from sun, wind, and insects.</p>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
+                        <img src="Rainier_Shade_awning1.webp" alt="Exterior Screens" class="w-full h-full object-cover group-hover:scale-105 transition">
+                    </div>
+                    <h3 class="font-semibold text-lg">Rainier Shades </h3>
+                    <p class="text-sm text-gray-600">Is custom made to fit your unique space. With widths up to 40' wide and projections up to 11'6" we have gotu your covered!</p>
                 </div>
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
@@ -215,49 +224,59 @@
     <section id="appointment" class="py-20 bg-accent text-primary">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-4xl font-serif mb-6">Schedule Your Free In-Home Consultation</h2>
-            <p class="text-lg mb-10">Pick a date and time that works for you. We’ll bring samples and measure your windows on-site.</p>
+            <p class="text-lg mb-10">Schedule a convenient time and schedule your free in-home consultation. We also provide <span class="font-bold">repair</span> services to ensure your blinds and shades last.</p>
             
-            <form 
-              action="https://formspree.io/f/xdkpqerv" 
-              method="POST" 
-              id="appointment-form" 
-              class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto"
-            >
-              
-              <input type="text" placeholder="Full Name" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-              <input type="email" placeholder="Email Address" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-              <input type="tel" placeholder="Phone Number" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-              <input type="text" placeholder="City / ZIP Code" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-              <div class="md:col-span-2">
-                <input type="text" placeholder="Full Address" required class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-              </div>
-              <div class="md:col-span-2">
-                <input type="date" id="preferred-date" required class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-              </div>
-              <div class="md:col-span-2">
-                <select required class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-                  <option value="">Preferred Time</option>
-                  <option>Morning (9 AM – 10 AM)</option>
-                  <option>Morning (10:30 AM – 12 PM)</option>
-                  <option>Afternoon (12 PM – 2 PM)</option>
-                  <option>Morning (2 PM – 4 PM)</option>
-                  <option>Morning (4 PM – 5:30 PM)</option>
-                  
-                </select>
-              </div>
-              <div class="md:col-span-2">
-                <textarea placeholder="Tell us about your project (optional)" rows="4" class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input resize-none"></textarea>
-              </div>
-              <button type="submit" class="md:col-span-2 bg-primary text-white py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition text-lg">Book Appointment</button>
-            </form>
-            <p class="mt-6 text-sm">We’ll confirm your appointment within 24 hours.</p>
+         <form 
+        action="https://formspree.io/f/xdkpqerv" 
+        method="POST" 
+        id="appointment-form" 
+        class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto"
+        >
+        <input type="text" name="full_name" placeholder="Full Name" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
+        
+        <input type="email" name="email" placeholder="Email Address" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
+        
+        <input type="tel" name="phone" placeholder="Phone Number" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
+        
+        <input type="text" name="city_zip" placeholder="City / ZIP Code" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
+        
+        <div class="md:col-span-2">
+            <input type="text" name="address" placeholder="Full Address" required class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
+        </div>
+        
+        <div class="md:col-span-2">
+            <input type="date" name="preferred_date" id="preferred-date" required class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
+        </div>
+        
+        <div class="md:col-span-2">
+            <select name="preferred_time" required class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
+            <option value="">Preferred Time</option>
+            <option>Morning (9 AM – 10 AM)</option>
+            <option>Morning (10:30 AM – 12 PM)</option>
+            <option>Afternoon (12 PM – 2 PM)</option>
+            <option>Afternoon (2 PM – 4 PM)</option>
+            <option>Evening (4 PM – 5:30 PM)</option>
+            </select>
+        </div>
+        
+        <div class="md:col-span-2">
+            <textarea name="project_details" placeholder="Tell us about your project .." rows="4" class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input resize-none"></textarea>
+        </div>
+        
+        <button type="submit" class="md:col-span-2 bg-primary text-white py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition text-lg">
+            Book Appointment
+        </button>
+        </form>
+
+        <p class="mt-6 text-sm">Thank you! Your appointment request has been submitted. We’ll confirm within 24 hours.</p>    
         </div>
     </section>
 
     <!-- Testimonials -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-serif text-center text-primary mb-16">What Utah Homeowners Say</h2>
+            <h2 class="text-4xl font-serif text-center text-primary mb-16">Testimonials</h2>
+            <p class="text-center text-gray-600 mb-8">Your feedback means the world to us! If you're happy with your new window coverings, we'd be so grateful if you could share your experience on Google.</p>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-sm">
                     <p class="italic mb-4">"Carlisle transformed our living room with motorized shades. The installation was flawless and the team was professional from start to finish."</p>
@@ -294,6 +313,10 @@
               <li><a href="#home" class="hover:text-accent">Home</a></li>
               <li><a href="#products" class="hover:text-accent">Products</a></li>
               <li><a href="#appointment" class="hover:text-accent">Schedule</a></li>
+              
+              <a href="https://www.instagram.com/carlisle_blinds_installation/" target="_blank" rel="noopener noreferrer" class="instagram-hash">
+                Instagram
+                </a>
             </ul>
           </div>
         </div>

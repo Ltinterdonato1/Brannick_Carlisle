@@ -1,3 +1,39 @@
+.instagram-hashtags {
+  text-align: center;
+  padding: 30px 20px;
+  background: #fafafa;
+}
+
+.instagram-hashtags h2 {
+  font-family: Arial, sans-serif;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.hashtags-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.instagram-hash {
+  display: inline-block;
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  color: white;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  transition: transform 0.2s;
+}
+
+.instagram-hash:hover {
+  transform: scale(1.05);
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -155,6 +191,20 @@ footer {
   margin: 2rem auto;
 }
 
+.form {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: .5rem;
+}
+
+.input, textarea, select, button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  font-size: .9rem;
+}
 .form-group {
   margin-bottom: 1.2rem;
 }
@@ -397,7 +447,10 @@ input:focus, textarea:focus {
     display: block;
   }
 }
-
+.menu--open {
+  width: 300px; /* or whatever width you prefer */
+  max-width: 80vw; /* ensures it doesn't exceed screen width on small devices */
+}
 
 /* Badges for service cards */
 .badges {
