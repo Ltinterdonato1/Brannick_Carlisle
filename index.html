@@ -1,355 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <input type="hidden" name="_next" value="thanks.html">
-    <title>Carlisle Blinds & Installation – Premium Window Coverings in Utah</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Utah’s trusted source for custom blinds, shades, shutters, and expert installation. Free quotes, motorized options, and outdoor solutions. Schedule your appointment today.">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="functions.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#1a3a32',
-                        accent: '#d4a574',
-                        light: '#f8f5f0',
-                    }
-                }
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Utah’s trusted source for custom blinds, shades, shutters, and expert installation. Free quotes, motorized options, and outdoor solutions." />
+  <title>Carlisle Blinds & Installation – Premium Window Coverings in Utah</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#1a3a32',
+            accent: '#d4a574',
+            light: '#f8f5f0',
+          }
         }
-    </script>
-    
-    <style>
-        .hero-bg {
-            background: linear-gradient(rgba(26, 58, 50, 0.7), rgba(26, 58, 50, 0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
-        }
-        .partner-logo {
-            filter: grayscale(100%);
-            transition: filter 0.3s;
-        }
-        .partner-logo:hover {
-            filter: grayscale(0%);
-        }
-        .form-input:focus {
-            outline: none;
-            ring: 2px solid #d4a574;
-            border-color: #d4a574;
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <!-- Custom CSS – ROOT FILE -->
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body class="font-sans bg-light text-primary">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                  <img src="logo.png" alt="Carlisle Blinds Logo" class="h-10 w-auto mr-3">
-                  <h1 class="text-2xl font-serif text-primary">Carlisle Blinds</h1>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#services" class="text-primary hover:text-accent transition">Services</a>
-                    <a href="#products" class="text-primary hover:text-accent transition">Products</a>
-                    <a href="#partners" class="text-primary hover:text-accent transition">Partners</a>
-                    <a href="#appointment" class="text-primary hover:text-accent transition">Schedule</a>
-                    <a href="#contact" class="text-primary hover:text-accent transition">Contact</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-primary">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                    </button>
-                </div>
-            </div>
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <img src="logo.png" alt="Carlisle Blinds Logo" class="h-10 w-auto mr-3">
+          <h1 class="text-2xl font-serif text-primary">Carlisle Blinds</h1>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <a href="#services" class="block px-4 py-2 text-primary hover:bg-accent hover:text-white text-center font-bold text-lg">Services</a>
-            <a href="#products" class="block px-4 py-2 text-primary hover:bg-accent hover:text-white text-center">Products</a>
-            <a href="#partners" class="block px-4 py-2 text-primary hover:bg-accent hover:text-white text-center">Partners</a>
-            <a href="#appointment" class="block px-4 py-2 text-primary hover:bg-accent hover:text-white text-center">Schedule</a>
-            <a href="#contact" class="block px-4 py-2 text-primary hover:bg-accent hover:text-white text-center">Contact</a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#services" class="hover:text-accent transition">Services</a>
+          <a href="#products" class="hover:text-accent transition">Products</a>
+          <a href="#partners" class="hover:text-accent transition">Partners</a>
+          <a href="#appointment" class="hover:text-accent transition">Schedule</a>
+          <a href="#contact" class="hover:text-accent transition">Contact</a>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white pt-16">
-        <div class="max-w-4xl px-4">
-            <h2 class="text-5xl md:text-6xl font-serif mb-6">Elevate Your Home with Premium Window Coverings</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Custom blinds, shades, and shutters crafted for style, comfort, and energy efficiency. Expert installation included.</p>
-            <div class="space-x-4">
-                <a href="#appointment" class="inline-block bg-accent text-primary px-8 py-3 rounded-full font-semibold hover:bg-white transition">Schedule Free Consultation</a>
-            </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-primary">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <a href="#services" class="block px-4 py-3 text-center hover:bg-accent hover:text-white">Services</a>
+      <a href="#products" class="block px-4 py-3 text-center hover:bg-accent hover:text-white">Products</a>
+      <a href="#partners" class="block px-4 py-3 text-center hover:bg-accent hover:text-white">Partners</a>
+      <a href="#appointment" class="block px-4 py-3 text-center hover:bg-accent hover:text-white">Schedule</a>
+      <a href="#contact" class="block px-4 py-3 text-center hover:bg-accent hover:text-white">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white pt-16">
+    <div class="max-w-4xl px-4">
+      <h2 class="text-5xl md:text-6xl font-serif mb-6">Elevate Your Home with Premium Window Coverings</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Custom blinds, shades, and shutters crafted for style, comfort, and energy efficiency. Expert installation included.</p>
+      <a href="#appointment" class="inline-block bg-accent text-primary px-8 py-3 rounded-full font-semibold hover:bg-white transition">Schedule Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-serif text-primary mb-4">Why Choose Carlisle?</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">With over 15 years of experience, we’ve built our reputation on quality, precision, and personal care. Every product is proudly made in the USA for faster delivery and superior performance.</p>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Expert Installation</h3>
+          <p class="text-gray-600">Every project is installed by certified professionals with a 100% satisfaction guarantee.</p>
         </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-serif text-primary mb-4">Why Choose Carlisle?</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">With over 15 years of experience, we’ve built our reputation on quality, precision, and personal care. Every product is proudly made in the USA for faster delivery and superior performance. And if you’re looking for something unique, we’ll match or custom-source it to fit your exact style.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="text-center">
-                    <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Expert Installation</h3>
-                    <p class="text-gray-600">Every project is installed by certified professionals with a 100% satisfaction guarantee.</p>
-                </div>
-                <div class="text-center">
-                    <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Premium Materials</h3>
-                    <p class="text-gray-600">Partnered with top brands for durable, stylish, and energy-efficient solutions.</p>
-                </div>
-                <div class="text-center">
-                    <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Fast & Reliable</h3>
-                    <p class="text-gray-600">Free in-home consultations and installations scheduled at your convenience.</p>
-                </div>
-            </div>
+        <div>
+          <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Premium Materials</h3>
+          <p class="text-gray-600">Partnered with top brands for durable, stylish, and energy-efficient solutions.</p>
         </div>
-    </section>
-
-    <!-- Products Showcase -->
-    <section id="products" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-serif text-primary mb-4">Explore Our Solutions</h2>
-                <p class="text-lg text-gray-600">From modern motorized shades to classic wood blinds — find the perfect fit for every room.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="group cursor-pointer">
-                    <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
-                        <img src="shades2.jpg" alt="Motorized Shades" class="w-full h-full object-cover group-hover:scale-105 transition">
-                    </div>
-                    <h3 class="font-semibold text-lg">Motorized Shades</h3>
-                    <p class="text-sm text-gray-600">Smart home integration, voice control, and scheduled automation.</p>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
-                        <img src="RainierShading2.jpg" alt="Exterior Screens" class="w-full h-full object-cover group-hover:scale-105 transition">
-                    </div>
-                    <h3 class="font-semibold text-lg">Exterior Screens</h3>
-                    <p class="text-sm text-gray-600">Protect patios and decks from sun, wind, and insects.</p>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
-                        <img src="Rainier_Shade_awning1.webp" alt="Exterior Screens" class="w-full h-full object-cover group-hover:scale-105 transition">
-                    </div>
-                    <h3 class="font-semibold text-lg">Rainier Shades </h3>
-                    <p class="text-sm text-gray-600">Is custom made to fit your unique space. With widths up to 40' wide and projections up to 11'6" we have gotu your covered!</p>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
-                        <img src="shades4.jpg" alt="Cellular Shades" class="w-full h-full object-cover group-hover:scale-105 transition">
-                    </div>
-                    <h3 class="font-semibold text-lg">Cellular Shades</h3>
-                    <p class="text-sm text-gray-600">Energy-efficient honeycomb design for insulation and light control.</p>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
-                        <img src="shutters3.jpg" alt="Custom Shutters" class="w-full h-full object-cover group-hover:scale-105 transition">
-                    </div>
-                    <h3 class="font-semibold text-lg">Custom Shutters</h3>
-                    <p class="text-sm text-gray-600">Timeless wood or composite shutters tailored to your windows.</p>
-                </div>
-            </div>
-           
+        <div>
+          <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Fast & Reliable</h3>
+          <p class="text-gray-600">Free in-home consultations and installations scheduled at your convenience.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Featured Partners -->
-    <section id="partners" class="py-20 bg-white">
-        <div class="max-w-7l mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-serif text-primary mb-4">Our Trusted Partners</h2>
-                <p class="text-lg text-gray-600">We work with industry-leading manufacturers...</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 items-center">
-
-                <!-- 1. Rainier Shading -->
-                <div class="text-center">
-                  <img src="Rainier_Shading_Logo.png" 
-                  alt="Rainier Shading" 
-                  class="h-20 w-40 object-contain mx-auto partner-logo">
-                  <p class="mt-2 text-sm text-gray-600"></p>
-                </div>
-
-                <!-- 2. Eclipse Exterior Shades -->
-                <div class="text-center">
-                  <img src="eclipse-awning-logo.webp" 
-                  alt="Eclipse Exterior Shades" 
-                  class="h-20 w-40 object-contain mx-auto partner-logo">
-                  <p class="mt-2 text-sm text-gray-600"></p>
-                </div>
-
-                <!-- 3. Oxford House -->
-                <div class="text-center">
-                  <img src="Oxford_House_logo.svg" 
-                  alt="Oxford House" 
-                  class="h-20 w-40 object-contain mx-auto partner-logo">
-                  <p class="mt-2 text-sm text-gray-600"></p>
-                </div>
-
-                <!-- 4. Skandia Window Fashions -->
-                <div class="text-center">
-                  <img src="Skandia_WIndow_logo.png" 
-                  alt="Skandia Window Fashions" 
-                  class="h-20 w-40 object-contain mx-auto partner-logo">
-                  <p class="mt-2 text-sm text-gray-600"></p>
-                </div>
-
-            </div>
+  <!-- Products Showcase -->
+  <section id="products" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-serif text-primary mb-4">Explore Our Solutions</h2>
+        <p class="text-lg text-gray-600">From modern motorized shades to classic wood blinds — find the perfect fit for every room.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="group cursor-pointer">
+          <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
+            <img src="shades2.jpg" alt="Motorized Shades" class="w-full h-full object-cover group-hover:scale-105 transition">
+          </div>
+          <h3 class="font-semibold text-lg">Motorized Shades</h3>
+          <p class="text-sm text-gray-600">Smart home integration, voice control, and scheduled automation.</p>
         </div>
-    </section>
-    <!-- Appointment Scheduler -->
-    <section id="appointment" class="py-20 bg-accent text-primary">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-serif mb-6">Schedule Your Free In-Home Consultation</h2>
-            <p class="text-lg mb-10">Schedule a convenient time and schedule your free in-home consultation. We also provide <span class="font-bold">repair</span> services to ensure your blinds and shades last.</p>
-            
-         <form 
-        action="https://formspree.io/f/xdkpqerv" 
-        method="POST" 
-        id="appointment-form" 
-        class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto"
-        >
-        <input type="text" name="full_name" placeholder="Full Name" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-        
-        <input type="email" name="email" placeholder="Email Address" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-        
-        <input type="tel" name="phone" placeholder="Phone Number" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-        
-        <input type="text" name="city_zip" placeholder="City / ZIP Code" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-        
+        <div class="group cursor-pointer">
+          <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
+            <img src="RainierShading2.jpg" alt="Exterior Screens" class="w-full h-full object-cover group-hover:scale-105 transition">
+          </div>
+          <h3 class="font-semibold text-lg">Exterior Screens</h3>
+          <p class="text-sm text-gray-600">Protect patios and decks from sun, wind, and insects.</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
+            <img src="Rainier_Shade_awning1.webp" alt="Rainier Shades" class="w-full h-full object-cover group-hover:scale-105 transition">
+          </div>
+          <h3 class="font-semibold text-lg">Rainier Shades</h3>
+          <p class="text-sm text-gray-600">Custom made up to 40' wide and 11'6" projection.</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
+            <img src="shades4.jpg" alt="Cellular Shades" class="w-full h-full object-cover group-hover:scale-105 transition">
+          </div>
+          <h3 class="font-semibold text-lg">Cellular Shades</h3>
+          <p class="text-sm text-gray-600">Energy-efficient honeycomb design for insulation and light control.</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="bg-gray-200 border-2 border-dashed rounded-xl h-64 mb-4 overflow-hidden">
+            <img src="shutters3.jpg" alt="Custom Shutters" class="w-full h-full object-cover group-hover:scale-105 transition">
+          </div>
+          <h3 class="font-semibold text-lg">Custom Shutters</h3>
+          <p class="text-sm text-gray-600">Timeless wood or composite shutters tailored to your windows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Partners -->
+  <section id="partners" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-serif text-primary mb-4">Our Trusted Partners</h2>
+        <p class="text-lg text-gray-600">We work with industry-leading manufacturers...</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 items-center">
+        <div class="text-center">
+          <img src="Rainier_Shading_Logo.png" alt="Rainier Shading" class="h-20 w-40 object-contain mx-auto partner-logo">
+        </div>
+        <div class="text-center">
+          <img src="eclipse-awning-logo.webp" alt="Eclipse Exterior Shades" class="h-20 w-40 object-contain mx-auto partner-logo">
+        </div>
+        <div class="text-center">
+          <img src="Oxford_House_logo.svg" alt="Oxford House" class="h-20 w-40 object-contain mx-auto partner-logo">
+        </div>
+        <div class="text-center">
+          <img src="Skandia_WIndow_logo.png" alt="Skandia Window Fashions" class="h-20 w-40 object-contain mx-auto partner-logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment Form -->
+  <section id="appointment" class="py-20 bg-accent text-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-serif mb-6">Schedule Your Free In-Home Consultation</h2>
+      <p class="text-lg mb-10">
+        Pick a convenient time for your free in-home consultation. We also offer 
+        <span class="font-bold">repair</span> services to keep your blinds and shades in top shape.
+      </p>
+
+      <form id="appointment-form" class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <input type="text" name="full_name" placeholder="Full Name" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input" />
+        <input type="email" name="email" placeholder="Email Address" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input" />
+        <input type="tel" name="phone" placeholder="Phone Number" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input" />
+        <input type="text" name="city_zip" placeholder="City / ZIP Code" required class="p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input" />
+        <input type="text" name="address" placeholder="Full Address" required class="md:col-span-2 w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input" />
+
         <div class="md:col-span-2">
-            <input type="text" name="address" placeholder="Full Address" required class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
+          <label for="preferred_date" class="block text-left mb-2 font-medium">Preferred Date</label>
+          <input type="date" id="preferred_date" name="preferred_date" required class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input" />
         </div>
-        
+
         <div class="md:col-span-2">
-            <label for="preferred-time">Preferred Date</label>
-            <input type="date" id="preferred_time" placeholder="mm/dd/yyyy" required style="width: 100%; padding: 10px; border: 1px; solid #ccc; border-radius: 4px;">
-        </div>
-        
-        <div class="md:col-span-2">
-            <select name="preferred_time" required class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
-            <option value="">Preferred Time</option>
+          <label for="preferred_time" class="block text-left mb-2 font-medium">Preferred Time</label>
+          <select id="preferred_time" name="preferred_time" required class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input">
+            <option value="" disabled selected>Select a time</option>
             <option>Morning (9 AM – 10 AM)</option>
             <option>Morning (10:30 AM – 12 PM)</option>
             <option>Afternoon (12 PM – 2 PM)</option>
             <option>Afternoon (2 PM – 4 PM)</option>
             <option>Evening (4 PM – 5:30 PM)</option>
-            </select>
+          </select>
         </div>
-        
+
         <div class="md:col-span-2">
-            <textarea name="project_details" placeholder="Tell us about your project .." rows="4" class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input resize-none"></textarea>
+          <label for="project_details" class="block text-left mb-2 font-medium">Tell us about your project</label>
+          <textarea id="project_details" name="project_details" placeholder="Optional details about windows, style preferences, etc." rows="4" class="w-full p-4 rounded-lg border border-primary/20 focus:ring-2 focus:ring-primary focus:border-transparent form-input resize-none"></textarea>
         </div>
-        
-        <button type="submit" class="md:col-span-2 bg-primary text-white py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition text-lg">
-            Book Appointment
+
+        <button type="submit" class="md:col-span-2 bg-primary text-white py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition text-lg mt-4">
+          Book Appointment
         </button>
-        </form>
+      </form>
+    </div>
+  </section>
 
-        <p class="mt-6 text-sm">Thank you! Your appointment request has been submitted. We’ll confirm within 24 hours.</p>    
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-serif text-center text-primary mb-16">Testimonials</h2>
-            <p class="text-center text-gray-600 mb-8">Your feedback means the world to us! If you're happy with your new window coverings, we'd be so grateful if you could share your experience on Google.</p>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm">
-                    <p class="italic mb-4">"Carlisle transformed our living room with motorized shades. The installation was flawless and the team was professional from start to finish."</p>
-                    <p class="font-semibold">— Sarah M., Salt Lake City</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm">
-                    <p class="italic mb-4">"We love our new exterior screens! They keep our patio cool all summer. Highly recommend their outdoor solutions."</p>
-                    <p class="font-semibold">— James & Lisa T., Provo</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm">
-                    <p class="italic mb-4">"Best decision for our new home. The custom shutters are stunning and the energy savings are noticeable."</p>
-                    <p class="font-semibold">— Robert K., Ogden</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Footer -->
-    <footer id="contact" class="bg-primary text-white py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Testimonials -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-serif text-center text-primary mb-16">Testimonials</h2>
+      <p class="text-center text-gray-600 mb-8">Your feedback means the world to us! If you're happy with your new window coverings, we'd be so grateful if you could share your experience on Google.</p>
       <div class="grid md:grid-cols-3 gap-8">
-        <div>
-        <div class="flex items-center mb-4">
-          <img src="logo.png" alt="Carlisle Blinds Logo" class="h-8 w-auto mr-3">
-          <h3 class="text-2xl font-serif">Carlisle Blinds & Installation</h3>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <p class="italic mb-4">"Carlisle transformed our living room with motorized shades. The installation was flawless and the team was professional from start to finish."</p>
+          <p class="font-semibold">— Sarah M., Salt Lake City</p>
         </div>
-        <p>Serving all of Utah with premium window treatments since 2008.</p>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <p class="italic mb-4">"We love our new exterior screens! They keep our patio cool all summer. Highly recommend their outdoor solutions."</p>
+          <p class="font-semibold">— James & Lisa T., Provo</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm">
+          <p class="italic mb-4">"Best decision for our new home. The custom shutters are stunning and the energy savings are noticeable."</p>
+          <p class="font-semibold">— Robert K., Ogden</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-primary text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="flex items-center justify-center mb-4">
+            <img src="logo.png" alt="Carlisle Blinds Logo" class="h-8 w-auto mr-3">
+            <h3 class="text-2xl font-serif">Carlisle Blinds & Installation</h3>
+          </div>
+          <p>Serving all of Utah with premium window treatments since 2008.</p>
         </div>
 
-        <div>
-          <div class="text-center">
-            <h4 class="font-semibold mb-3">Quick Links</h4>
-            <ul class="space-y-1">
-              <li><a href="#home" class="hover:text-accent">Home</a></li>
-              <li><a href="#products" class="hover:text-accent">Products</a></li>
-              <li><a href="#appointment" class="hover:text-accent">Schedule</a></li>
-              
-              <a href="https://www.instagram.com/carlisle_blinds_installation/" target="_blank" rel="noopener noreferrer" class="instagram-hash">
-                Instagram
-                </a>
-            </ul>
-          </div>
+        <div class="text-center">
+          <h4 class="font-semibold mb-3">Quick Links</h4>
+          <ul class="space-y-1">
+            <li><a href="#home" class="hover:text-accent">Home</a></li>
+            <li><a href="#products" class="hover:text-accent">Products</a></li>
+            <li><a href="#appointment" class="hover:text-accent">Schedule</a></li>
+            <li>
+              <a href="https://www.instagram.com/carlisle_blinds_installation/" target="_blank" rel="noopener noreferrer" class="hover:text-accent inline-flex items-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              Instagram
+              </a>
+            </li></svg>
+          </ul>
         </div>
-        <div>
-          <div class="text-center">
-            <h4 class="font-semibold mb-3">Contact Us</h4>
-            <p class="mb-1">Phone: <a href="tel:+14352224109" class="hover:text-accent">(435) 222-4109</a></p>
-            <p class="mb-1">Email: <a href="mailto:Carlisleblind@gmail.com" class="hover:text-accent">Carlisleblind@gmail.com</a></p>
-            <p>Mon–Fri: 9 AM – 5 PM<br>Sat: 10 AM – 2 PM</p>
-          </div>
+
+        <div class="text-center">
+          <h4 class="font-semibold mb-3">Contact Us</h4>
+          <p class="mb-1">Phone: <a href="tel:+14352224109" class="hover:text-accent">(435) 222-4109</a></p>
+          <p class="mb-1">Email: <a href="mailto:Carlisleblind@gmail.com" class="hover:text-accent">Carlisleblind@gmail.com</a></p>
+          <p>Mon–Fri: 9 AM – 5 PM<br>Sat: 10 AM – 2 PM</p>
         </div>
       </div>
       <div class="mt-10 pt-8 border-t border-white/20 text-center text-sm">
-        <p>&copy; 2025 Carlisle Blinds & Installation. All rights reserved.</p>
+        <p>© 2025 Carlisle Blinds & Installation. All rights reserved.</p>
       </div>
-      </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- Mobile Menu Script -->
-    <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
+  <!-- Modals -->
+  <div class="modal__overlay modal__overlay--loading"><div class="spinner"></div></div>
+  <div class="modal__overlay modal__overlay--success">
+    <p>Thank you! Your appointment request has been submitted. We’ll confirm within 24 hours.</p>
+  </div>
 
-        // Set min date for appointment
-        document.getElementById('preferred-date').min = new Date().toISOString().split('T')[0];
-
-        // Form submission (demo)
-        document.getElementById('appointment-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you! Your appointment request has been received. We’ll contact you within 24 hours.');
-        });
-    </script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
