@@ -1,27 +1,96 @@
 /* ===== DARK MODE & THEME ===== */
 :root {
-  --bg: #f8f5f0; --text: #1a3a32; --bg-card: #ffffff; --border: #cccccc; --accent: #d4a574;
+  --bg: #f8f5f0;
+  --text: #1a3a32;
+  --bg-card: #ffffff;
+  --border: #cccccc;
+  --accent: #d4a574;
 }
+
 [data-theme="dark"] {
-  --bg: #0f1a18; --text: #e0e0e0; --bg-card: #1a2a27; --border: #444444; --accent: #e6c084;
+  --bg: #0f1a18;
+  --text: #e0e0e0;
+  --bg-card: #1a2a27;
+  --border: #444444;
+  --accent: #e6c084;
 }
-html, body { background: var(--bg); color: var(--text); transition: background 0.3s, color 0.3s; }
-.bg-white { background: var(--bg-card); }
-.bg-gray-50 { background: #f9f9f9; }
-.text-primary { color: #1a3a32; }
-.bg-accent { background: var(--accent); }
-input, textarea, select { background: var(--bg-card); border: 1px solid var(--border); color: var(--text); }
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+.bg-white {
+  background: var(--bg-card);
+}
+
+.bg-gray-50 {
+  background: #f9f9f9;
+}
+
+.text-primary {
+  color: #1a3a32;
+}
+
+.bg-accent {
+  background: var(--accent);
+}
+
+input,
+textarea,
+select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
 
 /* Hero */
 .hero-bg {
-  background: linear-gradient(rgba(26,58,50,0.7), rgba(26,58,50,0.7)),
-              url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
+  background: linear-gradient(rgba(26, 58, 50, 0.7), rgba(26, 58, 50, 0.7)),
+    url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
 }
 
 /* Modals */
-.modal__overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); display: flex; align-items: center; justify-content: center; z-index: 9999; opacity: 0; visibility: hidden; transition: 0.3s; }
-.modal__overlay--visible { opacity: 1; visibility: visible; }
-.modal__overlay--loading .spinner { width: 50px; height: 50px; border: 5px solid #f3f3f3; border-top: 5px solid #d4a574; border-radius: 50%; animation: spin 1s linear infinite; }
-.modal__overlay--success { background: rgba(0,0,0,0.85); color: white; padding: 2rem 3rem; border-radius: 1rem; text-align: center; }
-@keyframes spin { to { transform: rotate(360deg); } }
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.modal__overlay--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__overlay--loading .spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #d4a574;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.modal__overlay--success {
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
