@@ -29,11 +29,24 @@
     }
   </script>
 
-  <!-- Custom CSS – ROOT FILE -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" type="text/css" />
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Tiny Custom Styles for Badge & Dark Mode -->
+  <style>
+    .testimonial-featured-badge {
+      @apply absolute -top-3 left-5 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full;
+    }
+    [data-theme="dark"] .bg-gradient-to-r { @apply from-blue-800 to-blue-900; }
+    [data-theme="dark"] .text-yellow-400 { @apply text-yellow-300; }
+    [data-theme="dark"] .bg-white { @apply bg-gray-800; }
+    [data-theme="dark"] .text-gray-700 { @apply text-gray-300; }
+    [data-theme="dark"] .shadow-md { @apply shadow-lg; }
+    [data-theme="dark"] .elfsight-app { filter: invert(1) hue-rotate(180deg); }
+  </style>
 </head>
 <body class="font-sans bg-light text-primary">
 
@@ -233,21 +246,48 @@
   <!-- Testimonials -->
   <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-serif text-center text-primary mb-16">Testimonials</h2>
-      <p class="text-center text-gray-600 mb-8">Your feedback means the world to us! If you're happy with your new window coverings, we'd be so grateful if you could share your experience on Google.</p>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-xl shadow-sm">
-          <p class="italic mb-4">"Carlisle transformed our living room with motorized shades. The installation was flawless and the team was professional from start to finish."</p>
-          <p class="font-semibold">— Sarah M., Salt Lake City</p>
+      <h2 class="text-4xl font-serif text-primary text-center mb-4">What Our Customers Say</h2>
+
+      <!-- Google Rating Callout -->
+      <div class="text-center bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 rounded-lg mb-8 max-w-2xl mx-auto">
+        <div class="text-4xl text-yellow-400 mb-2">5 stars</div>
+        <p class="text-lg">5.0 Stars on Google – 1 Review (and growing!)</p>
+        <a href="https://g.page/r/CSywiE7236e-EAE/review"
+           target="_blank" rel="noopener"
+           class="inline-block mt-4 bg-white text-blue-700 font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition">
+          Leave Your Review
+        </a>
+      </div>
+
+      <!-- Manual Testimonials (Featured + Placeholders) -->
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+
+        <!-- REAL GOOGLE REVIEW (FEATURED) -->
+        <div class="relative bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
+          <div class="testimonial-featured-badge">New! 5-Star Google Review</div>
+          <blockquote class="italic text-gray-700 mb-4">
+            "They did a great job on replacing our blinds, we love them!"
+          </blockquote>
+          <cite class="block text-sm font-medium text-gray-900">
+            — Scott Jr. Cannon, Utah <span class="text-gray-500">(Nov 2025)</span>
+          </cite>
+          <div class="text-yellow-400 text-xl mt-2">5 stars</div>
+          <a href="https://g.page/r/CSywiE7236e-EAE/review"
+             target="_blank" rel="noopener"
+             class="block mt-3 text-sm text-blue-600 hover:underline">
+            See on Google
+          </a>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow-sm">
-          <p class="italic mb-4">"We love our new exterior screens! They keep our patio cool all summer. Highly recommend their outdoor solutions."</p>
-          <p class="font-semibold">— James & Lisa T., Provo</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow-sm">
-          <p class="italic mb-4">"Best decision for our new home. The custom shutters are stunning and the energy savings are noticeable."</p>
-          <p class="font-semibold">— Robert K., Ogden</p>
-        </div>
+
+        
+
+      <!-- LIVE GOOGLE REVIEWS WIDGET -->
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-2xl font-serif text-primary text-center mb-6">See All Reviews</h3>
+        <div class="elfsight-app-ChIJd1t_tDeUFIcRUlrS_KWF9nM"
+             data-elfsight-app="google-reviews"
+             data-elfsight-place-id="ChIJd1t_tDeUFIcRUlrS_KWF9nM"
+             data-elfsight-theme="light"></div>
       </div>
     </div>
   </section>
@@ -272,12 +312,9 @@
             <li><a href="#appointment" class="hover:text-accent">Schedule</a></li>
             <li>
               <a href="https://www.instagram.com/carlisle_blinds_installation/" target="_blank" rel="noopener noreferrer" class="hover:text-accent inline-flex items-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-              Instagram
+                Instagram
               </a>
-            </li></svg>
+            </li>
           </ul>
         </div>
 
@@ -300,7 +337,10 @@
     <p>Thank you! Your appointment request has been submitted. We’ll confirm within 24 hours.</p>
   </div>
 
-  <!-- Scripts -->
+  <!-- Elfsight Widget Script -->
+  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+
+  <!-- Main Script -->
   <script src="script.js"></script>
 </body>
 </html>

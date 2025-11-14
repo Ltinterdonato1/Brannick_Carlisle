@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== REPLACE THESE WITH YOUR EMAILJS IDs =====
-  const SERVICE_ID = "service_7amg6ti";     // ← CHANGE IF WRONG
-  const TEMPLATE_ID = "template_xgtabnp";   // ← CHANGE IF WRONG
-  const PUBLIC_KEY = "OoaKizh3UM7gPJids";   // ← CHANGE IF WRONG
+  // ===== REPLACE WITH YOUR EMAILJS IDs =====
+  const SERVICE_ID = "service_7amg6ti";
+  const TEMPLATE_ID = "template_xgtabnp";
+  const PUBLIC_KEY = "OoaKizh3UM7gPJids";
 
   emailjs.init(PUBLIC_KEY);
 
@@ -10,12 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const loading = document.querySelector(".modal__overlay--loading");
   const success = document.querySelector(".modal__overlay--success");
 
-  // Mobile Menu
+  // Mobile Menu Toggle
   document.getElementById("mobile-menu-button")?.addEventListener("click", () => {
     document.getElementById("mobile-menu").classList.toggle("hidden");
   });
-
-
 
   // Form Submit
   form.addEventListener("submit", function (e) {
@@ -35,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  // Min Date
+  // Set min date for calendar
   const dateInput = document.getElementById("preferred_date");
   if (dateInput) dateInput.min = new Date().toISOString().split("T")[0];
 });
